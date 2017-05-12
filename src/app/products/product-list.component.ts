@@ -30,8 +30,9 @@ export class ProductListComponent implements OnInit {
         this.showImage = (this.route.snapshot.queryParams['showImage'] === 'true');
         // console.log(this.route.snapshot.queryParamMap.get('filterBy'));
 
-        this.productService.getProducts()
-                .subscribe(products => this.products = products,
-                           error => this.errorMessage = <any>error);
+        this.products = this.route.snapshot.data['products'];
+        // this.productService.getProducts()
+        //         .subscribe(products => this.products = products,
+        //                    error => this.errorMessage = <any>error);
     }
 }

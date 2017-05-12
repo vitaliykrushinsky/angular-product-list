@@ -4,17 +4,17 @@
           #productForm="ngForm">
         <fieldset>
             <legend>Basic Product Information</legend>
-            <div class="form-group" 
-                    [ngClass]="{'has-error': (productNameVar.touched || 
-                                              productNameVar.dirty || product.id !== 0) && 
+            <div class="form-group"
+                    [ngClass]="{'has-error': (productNameVar.touched ||
+                                              productNameVar.dirty || product.id !== 0) &&
                                               !productNameVar.valid }">
-                <label class="col-md-2 control-label" 
+                <label class="col-md-2 control-label"
                         for="productNameId">Product Name</label>
 
                 <div class="col-md-8">
-                    <input class="form-control" 
-                            id="productNameId" 
-                            type="text" 
+                    <input class="form-control"
+                            id="productNameId"
+                            type="text"
                             placeholder="Name (required)"
                             required
                             minlength="3"
@@ -33,17 +33,17 @@
                     </span>
                 </div>
             </div>
-            
-            <div class="form-group" 
-                    [ngClass]="{'has-error': (productCodeVar.touched || 
-                                              productCodeVar.dirty || product.id !== 0) && 
+
+            <div class="form-group"
+                    [ngClass]="{'has-error': (productCodeVar.touched ||
+                                              productCodeVar.dirty || product.id !== 0) &&
                                               !productCodeVar.valid }">
                 <label class="col-md-2 control-label" for="productCodeId">Product Code</label>
 
                 <div class="col-md-8">
-                    <input class="form-control" 
-                            id="productCodeId" 
-                            type="text" 
+                    <input class="form-control"
+                            id="productCodeId"
+                            type="text"
                             placeholder="Code (required)"
                             required
                             [(ngModel)] = product.productCode
@@ -58,17 +58,18 @@
                     </span>
                 </div>
             </div>
-            
+
             <div class="form-group">
                 <label class="col-md-2 control-label" for="descriptionId">Description</label>
 
                 <div class="col-md-8">
-                    <textarea class="form-control" 
-                            id="descriptionId" 
+                    <textarea class="form-control"
+                            id="descriptionId"
                             placeholder="Description"
                             rows=3
                             [(ngModel)] = product.description
-                            name="description"></textarea>
+                            name="description">
+                    </textarea>
                 </div>
             </div>
 

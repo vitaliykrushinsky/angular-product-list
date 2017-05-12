@@ -13,6 +13,7 @@ import { ProductResolver } from './product-resolver.service';
 import { ProductEditGuard } from './product-guard.service';
 
 import { SharedModule } from '../shared/shared.module';
+import { ProductsResolver } from './products-resolver.service';
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import { SharedModule } from '../shared/shared.module';
     RouterModule.forChild([
       {
         path: '',
-        component: ProductListComponent
+        component: ProductListComponent,
+        resolve: { products: ProductsResolver }
       },
       {
         path: ':id',
@@ -61,7 +63,8 @@ import { SharedModule } from '../shared/shared.module';
   providers: [
     ProductService,
     ProductResolver,
-    ProductEditGuard
+    ProductEditGuard,
+    ProductsResolver
   ]
 })
 export class ProductModule { }

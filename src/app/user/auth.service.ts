@@ -7,13 +7,7 @@ import { MessageService } from '../messages/message.service';
 export class AuthService {
     currentUser: IUser;
     redirectUrl: string;
-    constructor(public messageService: MessageService) {
-        this.currentUser = {
-          id: 1,
-          userName: 'Vitaliy',
-          isAdmin: true
-        }
-    }
+    constructor(public messageService: MessageService) {}
 
     isLoggedIn(): boolean {
         return !!this.currentUser;
